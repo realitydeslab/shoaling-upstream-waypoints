@@ -366,7 +366,7 @@ completionSelect.addEventListener("change", () => {
   const event = selectedEvent();
   if (!event) return;
   if (!completionSelect.value) {
-    event.completionAudio = null;
+    delete event.completionAudio;
   } else {
     event.completionAudio = {
       ...(event.completionAudio ?? {
