@@ -18,6 +18,8 @@ const soundSelect = document.getElementById("point-sound");
 const radiusInput = document.getElementById("point-radius");
 const radiusValue = document.getElementById("point-radius-value");
 const heightInput = document.getElementById("point-height");
+const triggerSelect = document.getElementById("point-trigger");
+const completionSelect = document.getElementById("point-completion");
 const tokenInput = document.getElementById("github-token");
 
 let journey = null;
@@ -160,6 +162,7 @@ function renderList() {
     const meta = document.createElement("span");
     meta.className = "meta";
     meta.textContent =
+      `${event.trigger?.type ?? "proximity"} · ` +
       `${event.position.x.toFixed(1)}, ${event.position.z.toFixed(1)} · ` +
       `${event.activationRadiusMeters.toFixed(1)} m`;
     item.append(name, meta);
@@ -177,6 +180,12 @@ function renderEditor() {
     .map((clip) =>
       `<option value="${clip.clipId}"${clip.clipId === event.audio?.clipId ? " selected" : ""}>` +
       `${escapeHtml(clip.clipId)}</option>`)
+    .join("");
+  triggerSelect.value = event.trigger?.type ?? "proximity";
+  completionSelect.innerHTML = ["<option value=\"\">(none)</option>"]
+    .concat(clips.map((clip) =>
+      `<option value="${clip.clipId}"${clip.clipId === event.completionAudio?.clipId ? " selected" : ""}>` +
+      `${escapeHtml(clip.clipId)}</option>`))
     .join("");
   radiusInput.value = event.activationRadiusMeters;
   radiusValue.textContent = `${Number(event.activationRadiusMeters).toFixed(1)} m`;
@@ -203,6 +212,49 @@ soundSelect.addEventListener("change", () => {
   const event = selectedEvent();
   if (!event) return;
   event.audio.clipId = soundSelect.value;
+  markDirty();
+});
+
+triggerSelect.addEventListener("change", () => {
+  const event = selectedEvent();
+  if (!event) return;
+  event.trigger = { ...(event.trigger ?? {}), type: triggerSelect.value };
+  event.trigger.verticalDistanceMeters ??= 0.25;
+  event.trigger.minimumUpwardSpeedMetersPerSecond ??= 0.2;
+  event.trigger.actionTimeoutSeconds ??= 8;
+  event.trigger.actionLabel ??= "";
+  // Keep prompts publishable: jump needs its safety condition stated and
+  // feeding must clearly apply to a virtual animal only.
+  if (triggerSelect.value === "jump" &&
+      !/safe|level|dry|clear/i.test(event.prompt ?? "")) {
+    event.prompt = "Jump only on the clear, level, dry ground.";
+  }
+  if (triggerSelect.value === "feed" && !/virtual/i.test(event.prompt ?? "")) {
+    event.prompt = "Offer food to the virtual animal. Do not feed real wildlife.";
+  }
+  markDirty();
+  renderList();
+});
+
+completionSelect.addEventListener("change", () => {
+  const event = selectedEvent();
+  if (!event) return;
+  if (!completionSelect.value) {
+    event.completionAudio = null;
+  } else {
+    event.completionAudio = {
+      ...(event.completionAudio ?? {
+        url: "",
+        volume: 0.5,
+        loop: false,
+        minDistanceMeters: 0.75,
+        maxDistanceMeters: 24,
+        provenance: { assetId: "", sourceUrl: "", creator: "", capturedAt: "", license: "", notes: "" },
+      }),
+      clipId: completionSelect.value,
+      loop: false,
+    };
+  }
   markDirty();
 });
 

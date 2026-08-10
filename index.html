@@ -31,6 +31,17 @@
           <label>Sound
             <select id="point-sound"></select>
           </label>
+          <label>Interaction
+            <select id="point-trigger">
+              <option value="proximity">Walk close — music plays</option>
+              <option value="crouch">Kneel down</option>
+              <option value="jump">Jump</option>
+              <option value="feed">Feed — tap the screen</option>
+            </select>
+          </label>
+          <label>Completion sound (one-shot reward)
+            <select id="point-completion"></select>
+          </label>
           <label>Trigger radius
             <span class="range-row">
               <input id="point-radius" type="range" min="0.5" max="12" step="0.1" />
