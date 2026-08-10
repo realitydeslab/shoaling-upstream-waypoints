@@ -56,8 +56,12 @@
               <output id="point-radius-value">2.0 m</output>
             </span>
           </label>
-          <label>Height (y, metres)
-            <input id="point-height" type="number" step="0.05" />
+          <label>Position (m) — Unity axes: X east · Y up · Z north
+            <span class="coord-row">
+              <input id="point-x" class="axis-x" type="number" step="0.1" title="X" />
+              <input id="point-height" class="axis-y" type="number" step="0.05" title="Y (height)" />
+              <input id="point-z" class="axis-z" type="number" step="0.1" title="Z" />
+            </span>
           </label>
           <div class="panel-row">
             <button id="listen-point">Listen</button>

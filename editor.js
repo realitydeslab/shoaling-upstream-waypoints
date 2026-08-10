@@ -58,6 +58,8 @@ const heightInput = document.getElementById("point-height");
 const triggerSelect = document.getElementById("point-trigger");
 const completionSelect = document.getElementById("point-completion");
 const depthInput = document.getElementById("point-depth");
+const xInput = document.getElementById("point-x");
+const zInput = document.getElementById("point-z");
 const tokenInput = document.getElementById("github-token");
 const siteSelect = document.getElementById("site-select");
 
@@ -208,6 +210,23 @@ function renderMap() {
       `<text class="point-label" x="${x}" y="${y - event.activationRadiusMeters - 0.35}">${escapeHtml(event.title ?? event.id)}</text>`,
     );
   }
+  const selectedEventForGizmo = journey?.events?.find(
+    (event) => event.id === selectedId);
+  if (selectedEventForGizmo) {
+    const gx = selectedEventForGizmo.position.x;
+    const gy = -selectedEventForGizmo.position.z;
+    const len = Math.max(1.2, view.size * 0.08);
+    const head = len * 0.18;
+    const grab = len * 0.22;
+    parts.push(
+      `<line class="gizmo-x" x1="${gx}" y1="${gy}" x2="${gx + len}" y2="${gy}"/>`,
+      `<polygon class="gizmo-x-head" points="${gx + len + head},${gy} ${gx + len},${gy - head / 2} ${gx + len},${gy + head / 2}"/>`,
+      `<line class="gizmo-grab" data-axis="x" data-id="${selectedEventForGizmo.id}" x1="${gx}" y1="${gy}" x2="${gx + len + head}" y2="${gy}" stroke-width="${grab}"/>`,
+      `<line class="gizmo-z" x1="${gx}" y1="${gy}" x2="${gx}" y2="${gy - len}"/>`,
+      `<polygon class="gizmo-z-head" points="${gx},${gy - len - head} ${gx - head / 2},${gy - len} ${gx + head / 2},${gy - len}"/>`,
+      `<line class="gizmo-grab" data-axis="z" data-id="${selectedEventForGizmo.id}" x1="${gx}" y1="${gy}" x2="${gx}" y2="${gy - len - head}" stroke-width="${grab}"/>`,
+    );
+  }
   if (previewOn) {
     const lx = listenerPos.x;
     const ly = -listenerPos.z;
@@ -227,8 +246,9 @@ svg.addEventListener("pointerdown", (eventArg) => {
   if (id === "__you") {
     drag = { kind: "listener" };
   } else if (id) {
-    selectPoint(id);
-    drag = { kind: "point", id };
+    const axis = eventArg.target.dataset?.axis;
+    if (!axis) selectPoint(id);
+    drag = { kind: "point", id, axis };
   } else {
     drag = { kind: "pan", startView: { ...view }, start: world };
   }
@@ -246,12 +266,13 @@ svg.addEventListener("pointermove", (eventArg) => {
   if (drag.kind === "point") {
     const event = journey.events.find((item) => item.id === drag.id);
     if (!event) return;
-    event.position.x = Math.round(world.x * 100) / 100;
-    event.position.z = Math.round(-world.y * 100) / 100;
+    if (drag.axis !== "z") event.position.x = Math.round(world.x * 100) / 100;
+    if (drag.axis !== "x") event.position.z = Math.round(-world.y * 100) / 100;
     markDirty();
     updatePreviewPositions();
     renderMap();
     renderList();
+    renderEditor();
   } else {
     view.x = drag.startView.x - (world.x - drag.start.x);
     view.y = drag.startView.y - (world.y - drag.start.y);
@@ -316,6 +337,8 @@ function renderEditor() {
   radiusInput.value = event.activationRadiusMeters;
   radiusValue.textContent = `${Number(event.activationRadiusMeters).toFixed(1)} m`;
   heightInput.value = event.position.y;
+  xInput.value = event.position.x;
+  zInput.value = event.position.z;
 }
 
 function selectPoint(id) {
@@ -404,6 +427,22 @@ radiusInput.addEventListener("input", () => {
   renderList();
   renderMap();
 });
+
+function numericAxisListener(input, axis) {
+  input.addEventListener("input", () => {
+    const event = selectedEvent();
+    if (!event) return;
+    const value = Number(input.value);
+    if (!Number.isFinite(value)) return;
+    event.position[axis] = value;
+    markDirty();
+    renderMap();
+    renderList();
+    updatePreviewPositions();
+  });
+}
+numericAxisListener(xInput, "x");
+numericAxisListener(zInput, "z");
 
 heightInput.addEventListener("input", () => {
   const event = selectedEvent();

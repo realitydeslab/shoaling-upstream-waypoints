@@ -116,3 +116,14 @@ details input { width: 100%; margin-top: 0.4rem; }
 
 .listener-dot { fill: #ffd76b; cursor: grab; }
 .listener-halo { fill: rgba(255, 215, 107, 0.15); stroke: #ffd76b; stroke-width: 0.04; cursor: grab; }
+
+.coord-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem; }
+.coord-row input { width: 100%; }
+.axis-x { border-left: 3px solid #d05c5c; }
+.axis-y { border-left: 3px solid #5cae6e; }
+.axis-z { border-left: 3px solid #5c7fd0; }
+.gizmo-x { stroke: #d05c5c; stroke-width: 0.09; }
+.gizmo-x-head { fill: #d05c5c; }
+.gizmo-z { stroke: #5c7fd0; stroke-width: 0.09; }
+.gizmo-z-head { fill: #5c7fd0; }
+.gizmo-grab { stroke: transparent; cursor: grab; }
