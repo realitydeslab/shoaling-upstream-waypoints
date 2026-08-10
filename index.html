@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071411" />
+    <title>Shoaling Upstream — Waypoint Editor</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div>
+        <h1>Shoaling Upstream</h1>
+        <p class="sub">Online waypoint editor · top-down metres around the VPS2 origin</p>
+      </div>
+      <span id="status" role="status">Loading…</span>
+    </header>
+
+    <main class="layout">
+      <aside class="panel">
+        <div class="panel-row">
+          <h2>Waypoints</h2>
+          <button id="add-point" title="Add a waypoint at the map centre">+ Add</button>
+        </div>
+        <ol id="point-list"></ol>
+
+        <section id="point-editor" hidden>
+          <label>Name
+            <input id="point-name" maxlength="160" />
+          </label>
+          <label>Sound
+            <select id="point-sound"></select>
+          </label>
+          <label>Trigger radius
+            <span class="range-row">
+              <input id="point-radius" type="range" min="0.5" max="12" step="0.1" />
+              <output id="point-radius-value">2.0 m</output>
+            </span>
+          </label>
+          <label>Height (y, metres)
+            <input id="point-height" type="number" step="0.05" />
+          </label>
+          <div class="panel-row">
+            <button id="listen-point">Listen</button>
+            <button id="delete-point" class="danger">Delete</button>
+          </div>
+        </section>
+
+        <footer class="actions">
+          <button id="publish" class="primary">Publish to iPhone</button>
+          <p id="unity-url" class="unity-url"></p>
+          <details>
+            <summary>GitHub token (needed to publish)</summary>
+            <input id="github-token" type="password" autocomplete="off"
+                   placeholder="Fine-grained PAT with Contents:write" />
+          </details>
+          <p class="hint">Drag a point on the map to move it. Publishing commits
+            <code>data/journey.json</code>; the iPhone app downloads it on launch.</p>
+        </footer>
+      </aside>
+
+      <section class="map-wrap" aria-label="Top-down waypoint map">
+        <svg id="map" role="application" aria-label="Waypoint map"></svg>
+        <p class="map-hint">1 square = 1 m · bold cross = VPS2 anchor origin ·
+          scroll to zoom · drag background to pan</p>
+      </section>
+    </main>
+
+    <script type="module" src="./editor.js"></script>
+  </body>
+</html>

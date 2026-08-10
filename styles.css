@@ -1,0 +1,111 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #071411;
+  color: #e6f2ee;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #16302a;
+}
+
+.bar h1 { margin: 0; font-size: 1.05rem; }
+.bar .sub { margin: 0.1rem 0 0; font-size: 0.75rem; color: #8fb3a9; }
+#status { font-size: 0.8rem; color: #9fd9c4; max-width: 40ch; text-align: right; }
+
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 0;
+}
+
+.panel {
+  border-right: 1px solid #16302a;
+  padding: 0.8rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.panel h2 { margin: 0; font-size: 0.9rem; }
+.panel-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+
+#point-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+#point-list li {
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+#point-list li:hover { background: #10231e; }
+#point-list li.selected { background: #14483a; }
+#point-list li .meta { color: #8fb3a9; font-size: 0.75rem; white-space: nowrap; }
+
+#point-editor { display: flex; flex-direction: column; gap: 0.65rem; border-top: 1px solid #16302a; padding-top: 0.8rem; }
+label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.75rem; color: #8fb3a9; }
+input, select, button {
+  font: inherit;
+  color: inherit;
+  background: #0d1f1a;
+  border: 1px solid #1d4237;
+  border-radius: 6px;
+  padding: 0.4rem 0.55rem;
+}
+input:focus, select:focus { outline: 1px solid #2f8f6f; }
+.range-row { display: flex; align-items: center; gap: 0.5rem; }
+.range-row input { flex: 1; padding: 0; }
+output { font-size: 0.8rem; color: #e6f2ee; min-width: 3.4rem; text-align: right; }
+
+button { cursor: pointer; }
+button:hover { border-color: #2f8f6f; }
+button.primary { background: #14483a; border-color: #2f8f6f; }
+button.primary.alt { background: #0d3a4a; border-color: #2f7f8f; }
+button.danger { border-color: #7f2f2f; color: #f0b9b9; }
+
+.actions { margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #16302a; padding-top: 0.8rem; }
+.unity-url { font-size: 0.68rem; color: #8fb3a9; word-break: break-all; margin: 0; }
+.hint { font-size: 0.7rem; color: #6d8f85; margin: 0; }
+.hint a { color: #9fd9c4; }
+details summary { font-size: 0.75rem; color: #8fb3a9; cursor: pointer; }
+details input { width: 100%; margin-top: 0.4rem; }
+
+.map-wrap { position: relative; min-width: 0; }
+#map { width: 100%; height: 100%; display: block; touch-action: none; background: #081915; }
+.map-hint {
+  position: absolute;
+  left: 0.8rem;
+  bottom: 0.5rem;
+  margin: 0;
+  font-size: 0.7rem;
+  color: #6d8f85;
+  pointer-events: none;
+}
+
+.grid-line { stroke: #10231e; stroke-width: 0.02; }
+.grid-line.major { stroke: #16302a; stroke-width: 0.04; }
+.axis-line { stroke: #2f5f52; stroke-width: 0.06; }
+.ring { fill: rgba(47, 143, 111, 0.12); stroke: #2f8f6f; stroke-width: 0.05; cursor: grab; }
+.ring.selected { fill: rgba(64, 199, 154, 0.22); stroke: #40c79a; }
+.dot { fill: #9fd9c4; cursor: grab; }
+.dot.selected { fill: #ffffff; }
+.point-label {
+  fill: #cde9df;
+  font-size: 0.55px;
+  text-anchor: middle;
+  pointer-events: none;
+  user-select: none;
+}

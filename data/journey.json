@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.1",
+  "id": "kinship-trout-downstairs-prototype",
+  "revision": "r000002",
+  "title": "Kinship Trout — Strawberry Creek South Test",
+  "summary": "A technical preview of site-relative interactions with packaged authored audio at Strawberry Creek South. The selected Scaniverse asset is recorded but is not yet the Production VPS2 version; event positions remain provisional until its anchor payload is attached and physically calibrated onsite.",
+  "site": {
+    "siteId": "187bbd62-4d21-480e-8f8d-e484754aa22b",
+    "coordinateSystem": "local-meters",
+    "originAnchorId": "production-anchor-aa815b01",
+    "vpsMapId": "",
+    "vpsAnchorPayload": "ChUIzK3p+YTFoaS7ARCy98WAhu/OvTYYhK/SovwzKicKFQj77KmLzIGioqgBEKv1/8qM7YPiGRIJCgASBSUAAIA/HQAAgD8yEhFun+5gcO9CQBnOlrAEB5FewA==",
+    "previewAssetUrl": "",
+    "scanProvenance": {
+      "assetId": "aa815b01-bed7-416c-9d52-b5aef03892f4",
+      "sourceUrl": "https://scaniverse.nianticspatial.com/orgs/f35a6672-fc09-4c74-ad33-488c721850fb/sites/187bbd62-4d21-480e-8f8d-e484754aa22b?tab=Assets&assetId=aa815b01-bed7-416c-9d52-b5aef03892f4",
+      "creator": "Botao Hu",
+      "capturedAt": "08/02/2026, 02:44 PM–05:18 PM (Scaniverse portal display)",
+      "license": "",
+      "notes": "Niantic site Strawberry Creek South in the Trout AR organization. The selected portal asset is named 'Stawberry Creek South 1' and completed on 08/02/2026 at 05:18 PM from three contributing scans, covering 366.57 m². The portal currently presents this asset as eligible to be set to Production, so no Production anchor ID or payload has been recorded. The previous Tong anchor was intentionally removed to prevent cross-site localization. Event coordinates are Unity-authorable simulation coordinates until a Production payload and three-point onsite calibration are recorded. Asset set to Production and its default-anchor payload recorded on 2026-08-09; onsite three-point calibration still pending."
+    }
+  },
+  "safety": {
+    "shortText": "Prototype complete. Remain attentive to the physical site.",
+    "fullText": "Use only in a supervised, dry test area. Place the jump point on level, unobstructed ground. Feed only the virtual animal; never feed wildlife."
+  },
+  "events": [
+    {
+      "id": "prototype-virtual-animal",
+      "kind": "encounter",
+      "title": "Reciprocal feeding",
+      "prompt": "Offer food to the virtual animal. Do not feed or approach real wildlife.",
+      "anchorId": "production-anchor-aa815b01",
+      "position": {
+        "x": 0.5,
+        "y": 1.65,
+        "z": 16
+      },
+      "activationRadiusMeters": 2.5,
+      "dwellSeconds": 1,
+      "trigger": {
+        "type": "feed",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 10,
+        "actionLabel": "Feed virtual animal"
+      },
+      "audio": {
+        "clipId": "heron",
+        "url": "",
+        "volume": 0.3,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "eat-strider",
+        "url": "",
+        "volume": 0.42,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "prototype-event-virtual-animal",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout?node-id=0-1",
+        "creator": "Shoaling Upstream team",
+        "capturedAt": "",
+        "license": "",
+        "notes": "MVP touch-button interpretation of the Chapter 3 reach-forward exchange: receive aquatic insects, then offer a trout to the virtual heron. It must not encourage feeding real animals."
+      }
+    }
+  ],
+  "provenance": {
+    "assetId": "kinship-trout-strawberry-creek-south-prototype-008",
+    "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout?node-id=0-1",
+    "creator": "Shoaling Upstream team",
+    "capturedAt": "",
+    "license": "",
+    "notes": "Bundled development fallback based on the supplied interaction descriptions. On 2026-08-03 the project was moved to Niantic Site Strawberry Creek South (187bbd62-4d21-480e-8f8d-e484754aa22b) and selected asset aa815b01-bed7-416c-9d52-b5aef03892f4. The portal showed that asset as not yet Production, so the old Tong anchor and payload were removed. Unity waypoint coordinates are authoring/simulation values until the new Production payload and onsite calibration are recorded. Audio was downloaded from the supplied Drive folder on 2026-07-30 and mapped as an MVP interpretation; authorship and license remain unverified."
+  }
+}

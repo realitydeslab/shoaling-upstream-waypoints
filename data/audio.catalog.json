@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "sourceFolderUrl": "https://drive.google.com/drive/folders/1NkqFP499sq8XFzoTh_CccWkMm-vIsp_c",
+  "importedAt": "2026-07-30",
+  "packaging": {
+    "format": "MP3",
+    "sampleRateHz": 48000,
+    "channels": 1,
+    "reason": "Mono point-source assets allow Apple PHASE to spatialize direction accurately while keeping the iOS build compact.",
+    "tool": "FFmpeg libmp3lame quality 4"
+  },
+  "rights": {
+    "creator": "",
+    "license": "",
+    "status": "unverified",
+    "notes": "The supplied Drive folder exposed filenames and file metadata, but not reliable authorship or license information. Confirm rights before public distribution."
+  },
+  "clips": [
+    {
+      "clipId": "opening",
+      "packagedFile": "Audio/opening.mp3",
+      "durationSeconds": 40.124083,
+      "packagedSha256": "78c09db7b6a37833776d239f9f241f65f189cd82351a3932893122e07141d26f",
+      "source": {
+        "driveId": "1c1uFlHtfHBVkJ5FQRRw1X5V_6txddQTz",
+        "title": "0_Opening.mp3",
+        "url": "https://drive.google.com/file/d/1c1uFlHtfHBVkJ5FQRRw1X5V_6txddQTz/view",
+        "mimeType": "audio/mpeg",
+        "sizeBytes": 677551,
+        "modifiedTime": "2026-07-30T06:27:40.000Z",
+        "sha256": "cc3f07f079ebbad25496dea4b79ae295bfa5e812798ca57595f0501c3d918200"
+      }
+    },
+    {
+      "clipId": "chapter-1-new-life",
+      "packagedFile": "Audio/chapter-1-new-life.mp3",
+      "durationSeconds": 30.772250,
+      "packagedSha256": "73f9354158a84b51e1983e5bfc616c9dfe232f7697912700cc12f0beff978b53",
+      "source": {
+        "driveId": "1GL6QUn3w1LGkqhIgBquz0SuGQsKi-Yzc",
+        "title": "1_New Life.mp3",
+        "url": "https://drive.google.com/file/d/1GL6QUn3w1LGkqhIgBquz0SuGQsKi-Yzc/view",
+        "mimeType": "audio/mpeg",
+        "sizeBytes": 527944,
+        "modifiedTime": "2026-07-30T06:31:44.000Z",
+        "sha256": "7f0232a85c8c780eeb9ef5823a173a4c61c0254699862d583de3ad9b7d0bc21d"
+      }
+    },
+    {
+      "clipId": "chapter-2-growing",
+      "packagedFile": "Audio/chapter-2-growing.mp3",
+      "durationSeconds": 37.511854,
+      "packagedSha256": "54fb9b346f035a274c291bca05fc8d7b183977ceb3470643b9f1982c79031774",
+      "source": {
+        "driveId": "1IFR4mt3L16QrQauUi6U8KBt5gIy_lycT",
+        "title": "2_Growing.mp3",
+        "url": "https://drive.google.com/file/d/1IFR4mt3L16QrQauUi6U8KBt5gIy_lycT/view",
+        "mimeType": "audio/mpeg",
+        "sizeBytes": 635755,
+        "modifiedTime": "2026-07-30T06:35:09.000Z",
+        "sha256": "f3371169485b1b7cf61bb78db2994648478c9110bf7278f99532d98ce3aa2efa"
+      }
+    },
+    {
+      "clipId": "chapter-3-journey-to-the-ocean",
+      "packagedFile": "Audio/chapter-3-journey-to-the-ocean.mp3",
+      "durationSeconds": 59.846542,
+      "packagedSha256": "dda30c5859e10d4c03ffe039d50f7df4ba04747c5916368cf561efa83c45f5e3",
+      "source": {
+        "driveId": "15OiMrx6nVuGCIgriwjPDoKwkwbNa3D94",
+        "title": "3_Journey to the ocean.mp3",
+        "url": "https://drive.google.com/file/d/15OiMrx6nVuGCIgriwjPDoKwkwbNa3D94/view",
+        "mimeType": "audio/mpeg",
+        "sizeBytes": 993110,
+        "modifiedTime": "2026-07-30T06:40:26.000Z",
+        "sha256": "ac42bf7b35bbf427d46d09704eb13b7a424653d86cf8303ee13610e5b6787b0b"
+      }
+    },
+    {
+      "clipId": "chapter-4-returning-home",
+      "packagedFile": "Audio/chapter-4-returning-home.mp3",
+      "durationSeconds": 28.786958,
+      "packagedSha256": "77e4c3df105fa7fa133b13cfc3fc82439157d2cc7c3d348aca60ff268b9bd34a",
+      "source": {
+        "driveId": "1WIG29pjaJavT_GkwR8nnUrxbHWpvxmPq",
+        "title": "4_Returning Home.mp3",
+        "url": "https://drive.google.com/file/d/1WIG29pjaJavT_GkwR8nnUrxbHWpvxmPq/view",
+        "mimeType": "audio/mpeg",
+        "sizeBytes": 496180,
+        "modifiedTime": "2026-07-30T06:44:04.000Z",
+        "sha256": "091db7c4c178f2d79f686146ca02aa107d95cbf76ac8b8a899b36902c626cfe6"
+      }
+    },
+    {
+      "clipId": "chapter-5-rebirth",
+      "packagedFile": "Audio/chapter-5-rebirth.mp3",
+      "durationSeconds": 32.862042,
+      "packagedSha256": "102958ef1cea19ed6ece3970378c09669c4f96f186c62480aff056b794416d58",
+      "source": {
+        "driveId": "1aoKP0Gnj9SfzCYyYeUIh_tvUkP0Yp2F5",
+        "title": "5_Rebirth.mp3",
+        "url": "https://drive.google.com/file/d/1aoKP0Gnj9SfzCYyYeUIh_tvUkP0Yp2F5/view",
+        "mimeType": "audio/mpeg",
+        "sizeBytes": 561358,
+        "modifiedTime": "2026-07-30T06:47:52.000Z",
+        "sha256": "f08e2d3fcf0fdc86d62e116106259f3914fedec0a9b79cc3cb7cf50996f90171"
+      }
+    },
+    {
+      "clipId": "tree-creek-waterplants-1-spatial",
+      "packagedFile": "Audio/tree-creek-waterplants-1-spatial.mp3",
+      "durationSeconds": 31.2,
+      "packagedSha256": "a4b51a82991904c1ea6fc596189af906c0531b57f5bff04f85fb9deab20d106d",
+      "source": {
+        "driveId": "1el86qXmsON7Tp8e9XPLtWzQxQpeb2EbV",
+        "title": "Tree creek waterplants 1.wav",
+        "url": "https://drive.google.com/file/d/1el86qXmsON7Tp8e9XPLtWzQxQpeb2EbV/view",
+        "mimeType": "audio/wav",
+        "sizeBytes": 11007438,
+        "modifiedTime": "2026-07-30T06:06:56.000Z",
+        "sha256": "b012ce189c3a165ebb4e7518ec5f9df4d46328b37b9d47b701245cc98daae11e"
+      }
+    },
+    {
+      "clipId": "tree-creek-waterplants-2-spatial",
+      "packagedFile": "Audio/tree-creek-waterplants-2-spatial.mp3",
+      "durationSeconds": 71.68,
+      "packagedSha256": "8461483ea6db6c4d941d8711a5bbfb16b4f06b85502433af10ff36d815fbb392",
+      "source": {
+        "driveId": "1Jdb9ez4C8rfQFCqOGdS23JwwrqUeyj6m",
+        "title": "Tree creek waterplants 2.wav",
+        "url": "https://drive.google.com/file/d/1Jdb9ez4C8rfQFCqOGdS23JwwrqUeyj6m/view",
+        "mimeType": "audio/wav",
+        "sizeBytes": 13873690,
+        "modifiedTime": "2026-07-30T06:07:19.000Z",
+        "sha256": "e7e4adf48546a3330d28f6270a94669731d525c0f58c2ba099fcf1aa2f766723"
+      }
+    },
+    {
+      "clipId": "heron",
+      "packagedFile": "Audio/heron.mp3",
+      "durationSeconds": 11.304979,
+      "packagedSha256": "269fe37bfe5fa708956aec0a5c5ebf69398a970523149a4a5c53f4e58e6f3658",
+      "source": {
+        "driveId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+        "title": "Heron.wav",
+        "url": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+        "mimeType": "audio/wav",
+        "sizeBytes": 1994214,
+        "modifiedTime": "2026-07-30T06:54:14.000Z",
+        "sha256": "c829e6ff67e09ba4ea6c1740dfd09f3c429766d62bac43148dbcfb68ce55bbb7"
+      }
+    },
+    {
+      "clipId": "strider",
+      "packagedFile": "Audio/strider.mp3",
+      "durationSeconds": 4.567021,
+      "packagedSha256": "a8c1019fbe73fbf677c72051222d4c492bd9920cdcc1ee20b21eed0b5aceccb6",
+      "source": {
+        "driveId": "1Zqvoo49-lEnXdRhotqpzr1WDv3zttV8Q",
+        "title": "Strider.wav",
+        "url": "https://drive.google.com/file/d/1Zqvoo49-lEnXdRhotqpzr1WDv3zttV8Q/view",
+        "mimeType": "audio/wav",
+        "sizeBytes": 880964,
+        "modifiedTime": "2026-07-30T05:56:29.000Z",
+        "sha256": "b2124d7f805a832b4fc873e9e20960d132d1ba79befd693e3fa91b771fc74802"
+      }
+    },
+    {
+      "clipId": "jump",
+      "packagedFile": "Audio/jump.mp3",
+      "durationSeconds": 3.325188,
+      "packagedSha256": "a4b7e0add5864bc53b36c1bd5f90195ef7900f4aca3146a130a370fdf12adcaf",
+      "source": {
+        "driveId": "13KdTdAT6QwXBbgJCnzkuUMxbAvsJcR8O",
+        "title": "Jump.wav",
+        "url": "https://drive.google.com/file/d/13KdTdAT6QwXBbgJCnzkuUMxbAvsJcR8O/view",
+        "mimeType": "audio/wav",
+        "sizeBytes": 1919404,
+        "modifiedTime": "2026-07-30T05:21:02.000Z",
+        "sha256": "7a2be31a1bdbbc84434c5e27fca470c0c3cde990811dcc856e3346c8d96bae6a"
+      }
+    },
+    {
+      "clipId": "eat-strider",
+      "packagedFile": "Audio/eat-strider.mp3",
+      "durationSeconds": 0.525,
+      "packagedSha256": "6aaf79d56e5624fe59c1c43bcb5b7e5f9cdb3305fac50bfe0773062662e6c575",
+      "source": {
+        "driveId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+        "title": "Eat strider.wav",
+        "url": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+        "mimeType": "audio/wav",
+        "sizeBytes": 92786,
+        "modifiedTime": "2026-07-30T05:13:39.000Z",
+        "sha256": "2cc0b2bf8d31c0200d24235decbc454df0feaf5376f1588856fba033d43c6c48"
+      }
+    },
+    {
+      "clipId": "lay-egg",
+      "packagedFile": "Audio/lay-egg.mp3",
+      "durationSeconds": 0.534729,
+      "packagedSha256": "513f0db50d48307969d8e8edd8b024c7249081765015f283f2316c9f7c73da69",
+      "source": {
+        "driveId": "14SoW2ioecMYI6n0qIJqYVddEKlEWUO2P",
+        "title": "Lay egg.wav",
+        "url": "https://drive.google.com/file/d/14SoW2ioecMYI6n0qIJqYVddEKlEWUO2P/view",
+        "mimeType": "audio/wav",
+        "sizeBytes": 81097,
+        "modifiedTime": "2026-07-30T05:12:12.000Z",
+        "sha256": "e3b6b2576605f7b3d1613c09ddb6949d91e66aa68b36d07048fa9ece256d1bc0"
+      }
+    }
+  ]
+}
