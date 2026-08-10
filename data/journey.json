@@ -1,23 +1,23 @@
 {
   "schemaVersion": "1.1",
   "id": "kinship-trout-downstairs-prototype",
-  "revision": "r000002",
-  "title": "Kinship Trout — Strawberry Creek South Test",
-  "summary": "A technical preview of site-relative interactions with packaged authored audio at Strawberry Creek South. The selected Scaniverse asset is recorded but is not yet the Production VPS2 version; event positions remain provisional until its anchor payload is attached and physically calibrated onsite.",
+  "revision": "r000003",
+  "title": "Kinship Trout — UBC Trees Test",
+  "summary": "Tree-music proximity test at the UBC trees site. Waypoints are metres relative to the UBC trees 1 Production anchor; positions are provisional until placed onsite with the web editor.",
   "site": {
-    "siteId": "187bbd62-4d21-480e-8f8d-e484754aa22b",
+    "siteId": "ed383e4c-34c7-48cd-b358-3e65377229ba",
     "coordinateSystem": "local-meters",
-    "originAnchorId": "production-anchor-aa815b01",
+    "originAnchorId": "production-anchor-1022bfda",
     "vpsMapId": "",
-    "vpsAnchorPayload": "ChUIzK3p+YTFoaS7ARCy98WAhu/OvTYYhK/SovwzKicKFQj77KmLzIGioqgBEKv1/8qM7YPiGRIJCgASBSUAAIA/HQAAgD8yEhFun+5gcO9CQBnOlrAEB5FewA==",
+    "vpsAnchorPayload": "ChUIl+qkh8Hfo6fYARCTvZ7PjpDrsW8YzajWzv4zKicKFQjArNS3j4D7oxgQl8uw0ZDeoerpARIJCgASBSUAAIA/HQAAgD8yEhFxZF8u2aFIQBkcn4H6b9BewA==",
     "previewAssetUrl": "",
     "scanProvenance": {
-      "assetId": "aa815b01-bed7-416c-9d52-b5aef03892f4",
-      "sourceUrl": "https://scaniverse.nianticspatial.com/orgs/f35a6672-fc09-4c74-ad33-488c721850fb/sites/187bbd62-4d21-480e-8f8d-e484754aa22b?tab=Assets&assetId=aa815b01-bed7-416c-9d52-b5aef03892f4",
-      "creator": "Botao Hu",
-      "capturedAt": "08/02/2026, 02:44 PM–05:18 PM (Scaniverse portal display)",
+      "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+      "sourceUrl": "https://scaniverse.nianticspatial.com/orgs/51edd29a-1057-486c-be54-6193b177a79f/sites/ed383e4c-34c7-48cd-b358-3e65377229ba?assetId=1022bfda-55cc-4007-aaad-02f8b8f53288",
+      "creator": "elantao29@gmail.com (Elan's organization), recorded by Botao Hu",
+      "capturedAt": "08/09/2026, 06:35 PM-09:03 PM (Scaniverse portal display)",
       "license": "",
-      "notes": "Niantic site Strawberry Creek South in the Trout AR organization. The selected portal asset is named 'Stawberry Creek South 1' and completed on 08/02/2026 at 05:18 PM from three contributing scans, covering 366.57 m². The portal currently presents this asset as eligible to be set to Production, so no Production anchor ID or payload has been recorded. The previous Tong anchor was intentionally removed to prevent cross-site localization. Event coordinates are Unity-authorable simulation coordinates until a Production payload and three-point onsite calibration are recorded. Asset set to Production and its default-anchor payload recorded on 2026-08-09; onsite three-point calibration still pending."
+      "notes": "Niantic site 'UBC trees' in Elan's organization. Asset 'UBC trees 1' completed 08/09/2026 09:03 PM from one contributing scan covering 570.49 m2; set to Production and its default-anchor payload recorded on 2026-08-09. Waypoint coordinates await onsite placement."
     }
   },
   "safety": {
@@ -30,7 +30,7 @@
       "kind": "encounter",
       "title": "Reciprocal feeding",
       "prompt": "Offer food to the virtual animal. Do not feed or approach real wildlife.",
-      "anchorId": "production-anchor-aa815b01",
+      "anchorId": "production-anchor-1022bfda",
       "position": {
         "x": 0.5,
         "y": 1.65,
