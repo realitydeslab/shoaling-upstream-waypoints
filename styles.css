@@ -127,3 +127,6 @@ details input { width: 100%; margin-top: 0.4rem; }
 .gizmo-z { stroke: #5c7fd0; stroke-width: 0.09; }
 .gizmo-z-head { fill: #5c7fd0; }
 .gizmo-grab { stroke: transparent; cursor: grab; }
+
+#map3d { position: absolute; inset: 0; background: #081915; }
+#map3d canvas { display: block; }

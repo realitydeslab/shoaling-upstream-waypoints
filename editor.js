@@ -63,6 +63,59 @@ const zInput = document.getElementById("point-z");
 const tokenInput = document.getElementById("github-token");
 const siteSelect = document.getElementById("site-select");
 
+// ---------- 3D scan view (lazy-loaded Spark + TransformControls) ----------
+let view3d = { open: false, mod: null, movingFromGizmo: false };
+
+function scanUrl() {
+  const site = currentSite();
+  return site?.scanPath ? `./data/${site.scanPath}` : "";
+}
+
+function sync3d() {
+  if (view3d.open && view3d.mod && !view3d.movingFromGizmo) {
+    view3d.mod.syncMarkers(journey, selectedId);
+  }
+}
+
+document.getElementById("view3d-toggle").addEventListener("click", async () => {
+  const map3d = document.getElementById("map3d");
+  const map2d = document.getElementById("map");
+  if (!view3d.mod) {
+    setStatus("Loading 3D engine…");
+    try {
+      view3d.mod = await import("./editor3d.js");
+    } catch (error) {
+      setStatus(`3D view unavailable: ${error.message}`);
+      return;
+    }
+    view3d.mod.init3d(map3d, {
+      onSelected: (id) => selectPoint(id),
+      onMoved: (id, position) => {
+        const event = journey?.events?.find((item) => item.id === id);
+        if (!event) return;
+        view3d.movingFromGizmo = true;
+        event.position = { ...position };
+        markDirty();
+        renderMap();
+        renderList();
+        renderEditor();
+        updatePreviewPositions();
+        view3d.movingFromGizmo = false;
+      },
+    });
+  }
+  view3d.open = !view3d.open;
+  map3d.hidden = !view3d.open;
+  map2d.style.display = view3d.open ? "none" : "block";
+  document.getElementById("view3d-toggle").classList.toggle("primary", view3d.open);
+  view3d.mod.setVisible(view3d.open);
+  if (view3d.open) {
+    sync3d();
+    view3d.mod.loadScan(scanUrl(), setStatus).catch(
+      (error) => setStatus(`Scan could not load: ${error.message}`));
+  }
+});
+
 let journey = null;
 let journeySha = null;
 let sitesIndex = null;
@@ -186,6 +239,7 @@ function escapeHtml(value) {
 }
 
 function renderMap() {
+  sync3d();
   svg.setAttribute("viewBox", `${view.x} ${view.y} ${view.size} ${view.size}`);
   const parts = [];
   const start = Math.floor(view.x - 1);
@@ -654,6 +708,10 @@ async function loadSite(siteId) {
   renderEditor();
   renderMap();
   if (previewOn) startPreview();
+  if (view3d.open && view3d.mod) {
+    view3d.mod.loadScan(scanUrl(), setStatus).catch(
+      (error) => setStatus(`Scan could not load: ${error.message}`));
+  }
   const active = sitesIndex.activeSiteId === site.id
     ? "active on iPhone"
     : "not active on iPhone";
