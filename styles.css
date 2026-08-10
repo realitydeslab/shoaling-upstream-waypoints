@@ -130,3 +130,8 @@ details input { width: 100%; margin-top: 0.4rem; }
 
 #map3d { position: absolute; inset: 0; background: #081915; }
 #map3d canvas { display: block; }
+
+.view3d-modes {
+  position: absolute; top: 0.7rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 0.4rem; z-index: 3;
+}

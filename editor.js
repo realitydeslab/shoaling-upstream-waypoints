@@ -64,6 +64,19 @@ const tokenInput = document.getElementById("github-token");
 const siteSelect = document.getElementById("site-select");
 
 // ---------- 3D scan view (lazy-loaded Spark + TransformControls) ----------
+
+document.getElementById("mode-god").addEventListener("click", () => {
+  view3d.mod?.setMode("god");
+  document.getElementById("mode-god").classList.add("primary");
+  document.getElementById("mode-user").classList.remove("primary");
+  setStatus("God view — orbit, and drag the gizmo arrows to move the point.");
+});
+document.getElementById("mode-user").addEventListener("click", () => {
+  view3d.mod?.setMode("user");
+  document.getElementById("mode-user").classList.add("primary");
+  document.getElementById("mode-god").classList.remove("primary");
+  setStatus("User view — WASD walk, drag to look, Shift faster. Turn on Spatial preview to hear the points.");
+});
 let view3d = { open: false, mod: null, movingFromGizmo: false };
 
 function scanUrl() {
@@ -89,6 +102,10 @@ document.getElementById("view3d-toggle").addEventListener("click", async () => {
       return;
     }
     view3d.mod.init3d(map3d, {
+      onUserMoved: (x, z) => {
+        listenerPos = { x, z };
+        updatePreviewPositions();
+      },
       onSelected: (id) => selectPoint(id),
       onMoved: (id, position) => {
         const event = journey?.events?.find((item) => item.id === id);
@@ -106,6 +123,7 @@ document.getElementById("view3d-toggle").addEventListener("click", async () => {
   }
   view3d.open = !view3d.open;
   map3d.hidden = !view3d.open;
+  document.getElementById("view3d-modes").hidden = !view3d.open;
   map2d.style.display = view3d.open ? "none" : "block";
   document.getElementById("view3d-toggle").classList.toggle("primary", view3d.open);
   view3d.mod.setVisible(view3d.open);

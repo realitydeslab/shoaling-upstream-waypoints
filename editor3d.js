@@ -17,6 +17,17 @@ let selectedIdRef = null;
 let markerByEventId = new Map();
 let animating = false;
 let scanLoaded = "";
+let mode = "god";
+let gizmoHelper = null;
+const userState = {
+  pos: null,
+  yaw: 0,
+  pitch: -0.05,
+  keys: new Set(),
+  dragging: false,
+  prev: { x: 0, y: 0 },
+};
+const WALK_SPEED = 2.6;
 
 const raycaster = new THREE.Raycaster();
 const pointerVec = new THREE.Vector2();
@@ -59,7 +70,8 @@ export function init3d(hostElement, hostCallbacks) {
       z: Math.round(marker.position.z * 100) / 100,
     });
   });
-  scene.add(gizmo.getHelper());
+  gizmoHelper = gizmo.getHelper();
+  scene.add(gizmoHelper);
 
   scene.add(new THREE.HemisphereLight(0xe8fff0, 0x14251d, 2.2));
   const grid = new THREE.GridHelper(80, 80, 0x2b7053, 0x143b2d);
@@ -71,6 +83,12 @@ export function init3d(hostElement, hostCallbacks) {
   scene.add(markerGroup);
 
   renderer.domElement.addEventListener("pointerdown", (event) => {
+    if (mode === "user") {
+      userState.dragging = true;
+      userState.prev = { x: event.clientX, y: event.clientY };
+      renderer.domElement.setPointerCapture(event.pointerId);
+      return;
+    }
     if (gizmo.dragging) return;
     const bounds = renderer.domElement.getBoundingClientRect();
     pointerVec.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
@@ -82,8 +100,61 @@ export function init3d(hostElement, hostCallbacks) {
     if (eventId) callbacks.onSelected?.(eventId);
   });
 
+  renderer.domElement.addEventListener("pointermove", (event) => {
+    if (mode !== "user" || !userState.dragging) return;
+    userState.yaw -= (event.clientX - userState.prev.x) * 0.004;
+    userState.pitch = Math.max(-1.2, Math.min(1.2,
+      userState.pitch - (event.clientY - userState.prev.y) * 0.003));
+    userState.prev = { x: event.clientX, y: event.clientY };
+  });
+  const endLook = () => { userState.dragging = false; };
+  renderer.domElement.addEventListener("pointerup", endLook);
+  renderer.domElement.addEventListener("pointercancel", endLook);
+
+  window.addEventListener("keydown", (event) => {
+    if (animating && mode === "user" &&
+        !/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName ?? "")) {
+      userState.keys.add(event.code);
+    }
+  });
+  window.addEventListener("keyup", (event) => userState.keys.delete(event.code));
+
   new ResizeObserver(resize).observe(container);
   resize();
+}
+
+export function setMode(newMode) {
+  if (!renderer) return;
+  mode = newMode;
+  const god = mode === "god";
+  controls.enabled = god;
+  gizmo.enabled = god;
+  if (gizmoHelper) gizmoHelper.visible = god;
+  if (!god) {
+    userState.pos ??= new THREE.Vector3(0, 1.65, -8);
+    userState.keys.clear();
+  }
+}
+
+function stepUser(delta) {
+  const speed = WALK_SPEED *
+    (userState.keys.has("ShiftLeft") || userState.keys.has("ShiftRight") ? 2.2 : 1);
+  const forward = new THREE.Vector3(
+    -Math.sin(userState.yaw), 0, -Math.cos(userState.yaw));
+  const right = new THREE.Vector3(-forward.z, 0, forward.x);
+  const move = new THREE.Vector3();
+  if (userState.keys.has("KeyW") || userState.keys.has("ArrowUp")) move.add(forward);
+  if (userState.keys.has("KeyS") || userState.keys.has("ArrowDown")) move.sub(forward);
+  if (userState.keys.has("KeyD") || userState.keys.has("ArrowRight")) move.add(right);
+  if (userState.keys.has("KeyA") || userState.keys.has("ArrowLeft")) move.sub(right);
+  if (move.lengthSq() > 0) {
+    move.normalize().multiplyScalar(speed * delta);
+    userState.pos.add(move);
+    callbacks.onUserMoved?.(userState.pos.x, userState.pos.z);
+  }
+  camera.position.copy(userState.pos);
+  camera.quaternion.setFromEuler(
+    new THREE.Euler(userState.pitch, userState.yaw, 0, "YXZ"));
 }
 
 function resize() {
@@ -170,9 +241,13 @@ export function setVisible(visible) {
   if (visible) animate();
 }
 
-function animate() {
+let lastTime = 0;
+function animate(time = 0) {
   if (!animating) return;
   requestAnimationFrame(animate);
-  controls.update();
+  const delta = Math.min(0.05, (time - lastTime) / 1000 || 0.016);
+  lastTime = time;
+  if (mode === "god") controls.update();
+  else stepUser(delta);
   renderer.render(scene, camera);
 }
