@@ -57,6 +57,7 @@ const radiusValue = document.getElementById("point-radius-value");
 const heightInput = document.getElementById("point-height");
 const triggerSelect = document.getElementById("point-trigger");
 const completionSelect = document.getElementById("point-completion");
+const depthInput = document.getElementById("point-depth");
 const tokenInput = document.getElementById("github-token");
 const siteSelect = document.getElementById("site-select");
 
@@ -311,6 +312,7 @@ function renderEditor() {
       `<option value="${clip.clipId}"${clip.clipId === event.completionAudio?.clipId ? " selected" : ""}>` +
       `${escapeHtml(clip.clipId)}</option>`))
     .join("");
+  depthInput.value = event.trigger?.verticalDistanceMeters ?? 0.25;
   radiusInput.value = event.activationRadiusMeters;
   radiusValue.textContent = `${Number(event.activationRadiusMeters).toFixed(1)} m`;
   heightInput.value = event.position.y;
@@ -380,6 +382,17 @@ completionSelect.addEventListener("change", () => {
     };
   }
   markDirty();
+});
+
+depthInput.addEventListener("input", () => {
+  const event = selectedEvent();
+  if (!event) return;
+  const value = Number(depthInput.value);
+  if (Number.isFinite(value) && value > 0) {
+    event.trigger = { ...(event.trigger ?? { type: "proximity" }) };
+    event.trigger.verticalDistanceMeters = value;
+    markDirty();
+  }
 });
 
 radiusInput.addEventListener("input", () => {
