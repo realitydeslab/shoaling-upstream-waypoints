@@ -2,8 +2,8 @@
   "schemaVersion": "1.1",
   "id": "kinship-trout-downstairs-prototype",
   "revision": "r000003",
-  "title": "Kinship Trout — UBC Trees Test",
-  "summary": "Tree-music proximity test at the UBC trees site. Waypoints are metres relative to the UBC trees 1 Production anchor; positions are provisional until placed onsite with the web editor.",
+  "title": "Kinship Trout — full journey (UBC trees rehearsal)",
+  "summary": "All Opening-to-Rebirth interaction beats from the Kinship & Trout board, laid out as a compact loop on the UBC trees test ground. Positions are rehearsal values; the same journey swaps to the Berkeley creek sites via the site registry.",
   "site": {
     "siteId": "ed383e4c-34c7-48cd-b358-3e65377229ba",
     "coordinateSystem": "local-meters",
@@ -26,18 +26,18 @@
   },
   "events": [
     {
-      "id": "branch-main-canopy",
+      "id": "opening",
       "kind": "encounter",
-      "title": "Main Trunk Canopy",
-      "prompt": "Stand beneath the big multi-trunk tree and listen up into the canopy.",
+      "title": "Opening — You Are a School of Trout",
+      "prompt": "You are born upstream. Follow the sound to begin; watch closely, listen deeply.",
       "anchorId": "production-anchor-1022bfda",
       "position": {
         "x": 0.0,
-        "y": 2.4,
-        "z": 0.0
+        "y": 1.6,
+        "z": -8.0
       },
       "activationRadiusMeters": 4.0,
-      "dwellSeconds": 1.5,
+      "dwellSeconds": 3,
       "trigger": {
         "type": "proximity",
         "verticalDistanceMeters": 0.25,
@@ -46,7 +46,7 @@
         "actionLabel": ""
       },
       "audio": {
-        "clipId": "tree-creek-waterplants-1-spatial",
+        "clipId": "opening",
         "url": "",
         "volume": 0.5,
         "loop": true,
@@ -61,53 +61,38 @@
           "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
         }
       },
-      "completionAudio": {
-        "clipId": "heron",
-        "url": "",
-        "volume": 0.5,
-        "loop": false,
-        "minDistanceMeters": 0.75,
-        "maxDistanceMeters": 18,
-        "provenance": {
-          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
-          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
-          "creator": "",
-          "capturedAt": "",
-          "license": "",
-          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
-        }
-      },
+      "completionAudio": null,
       "provenance": {
         "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
-        "sourceUrl": "",
-        "creator": "placed remotely, adjust onsite",
-        "capturedAt": "2026-08-09",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
         "license": "",
-        "notes": "Provisional branch placement relative to the UBC trees 1 anchor; drag onto the real branch in the online editor onsite."
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
       }
     },
     {
-      "id": "branch-west",
+      "id": "ch1-new-life",
       "kind": "encounter",
-      "title": "West Branch",
-      "prompt": "Follow the low branch reaching west and kneel beneath it.",
+      "title": "Ch1 · Tree & Gravel Bed — New Life",
+      "prompt": "Touch the tree and crouch beside the gravel bed if you trust them to shelter new life.",
       "anchorId": "production-anchor-1022bfda",
       "position": {
-        "x": -4.0,
-        "y": 2.0,
-        "z": 1.5
+        "x": 0.0,
+        "y": 1.8,
+        "z": 0.0
       },
-      "activationRadiusMeters": 3.0,
-      "dwellSeconds": 1.5,
+      "activationRadiusMeters": 3.5,
+      "dwellSeconds": 2.0,
       "trigger": {
         "type": "crouch",
-        "verticalDistanceMeters": 0.25,
+        "verticalDistanceMeters": 0.3,
         "minimumUpwardSpeedMetersPerSecond": 0.2,
         "actionTimeoutSeconds": 8,
         "actionLabel": ""
       },
       "audio": {
-        "clipId": "tree-creek-waterplants-2-spatial",
+        "clipId": "chapter-1-new-life",
         "url": "",
         "volume": 0.5,
         "loop": true,
@@ -125,7 +110,7 @@
       "completionAudio": {
         "clipId": "lay-egg",
         "url": "",
-        "volume": 0.5,
+        "volume": 0.55,
         "loop": false,
         "minDistanceMeters": 0.75,
         "maxDistanceMeters": 18,
@@ -140,29 +125,29 @@
       },
       "provenance": {
         "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
-        "sourceUrl": "",
-        "creator": "placed remotely, adjust onsite",
-        "capturedAt": "2026-08-09",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
         "license": "",
-        "notes": "Provisional branch placement relative to the UBC trees 1 anchor; drag onto the real branch in the online editor onsite."
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
       }
     },
     {
-      "id": "branch-east",
+      "id": "ch2-growing",
       "kind": "encounter",
-      "title": "East Branch",
-      "prompt": "Jump only on the clear, level, dry ground beneath the east branch.",
+      "title": "Ch2 · Deep Pool & Water Plants — Growing",
+      "prompt": "Crouch beside the plants and the deep pool if you trust them to protect you.",
       "anchorId": "production-anchor-1022bfda",
       "position": {
-        "x": 4.0,
-        "y": 2.2,
-        "z": -1.0
+        "x": -6.0,
+        "y": 1.5,
+        "z": 3.0
       },
-      "activationRadiusMeters": 3.0,
-      "dwellSeconds": 1.5,
+      "activationRadiusMeters": 3.5,
+      "dwellSeconds": 2.0,
       "trigger": {
-        "type": "jump",
-        "verticalDistanceMeters": 0.25,
+        "type": "crouch",
+        "verticalDistanceMeters": 0.3,
         "minimumUpwardSpeedMetersPerSecond": 0.2,
         "actionTimeoutSeconds": 8,
         "actionLabel": ""
@@ -184,9 +169,9 @@
         }
       },
       "completionAudio": {
-        "clipId": "jump",
+        "clipId": "tree-creek-waterplants-2-spatial",
         "url": "",
-        "volume": 0.5,
+        "volume": 0.55,
         "loop": false,
         "minDistanceMeters": 0.75,
         "maxDistanceMeters": 18,
@@ -201,11 +186,347 @@
       },
       "provenance": {
         "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
-        "sourceUrl": "",
-        "creator": "placed remotely, adjust onsite",
-        "capturedAt": "2026-08-09",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
         "license": "",
-        "notes": "Provisional branch placement relative to the UBC trees 1 anchor; drag onto the real branch in the online editor onsite."
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
+      }
+    },
+    {
+      "id": "ch3-insects",
+      "kind": "encounter",
+      "title": "Ch3 · Aquatic Insects — A Gift Received",
+      "prompt": "Reach your hand forward (tap) to receive the virtual insects' gift and grow.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": -9.0,
+        "y": 1.5,
+        "z": -2.0
+      },
+      "activationRadiusMeters": 3.0,
+      "dwellSeconds": 2.0,
+      "trigger": {
+        "type": "feed",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": "Receive the insects"
+      },
+      "audio": {
+        "clipId": "chapter-3-journey-to-the-ocean",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "eat-strider",
+        "url": "",
+        "volume": 0.55,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
+        "license": "",
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
+      }
+    },
+    {
+      "id": "ch3-heron",
+      "kind": "encounter",
+      "title": "Ch3 · Night Heron — A Gift Offered",
+      "prompt": "Reach your hand forward (tap) to offer one virtual trout to the heron family.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": -6.0,
+        "y": 1.6,
+        "z": -7.0
+      },
+      "activationRadiusMeters": 3.0,
+      "dwellSeconds": 2.0,
+      "trigger": {
+        "type": "feed",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": "Offer a trout"
+      },
+      "audio": {
+        "clipId": "heron",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "eat-strider",
+        "url": "",
+        "volume": 0.55,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
+        "license": "",
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
+      }
+    },
+    {
+      "id": "ch3-ocean-threshold",
+      "kind": "encounter",
+      "title": "Ch3 · Downstream Boundary — The World Opens",
+      "prompt": "Half the shoal leaves for the ocean; linger here as the water changes.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": 0.0,
+        "y": 1.5,
+        "z": -12.0
+      },
+      "activationRadiusMeters": 4.0,
+      "dwellSeconds": 2.0,
+      "trigger": {
+        "type": "proximity",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": ""
+      },
+      "audio": {
+        "clipId": "chapter-3-journey-to-the-ocean",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": null,
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
+        "license": "",
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
+      }
+    },
+    {
+      "id": "ch4-steps-jump",
+      "kind": "encounter",
+      "title": "Ch4 · The Steps — Jump to Pass",
+      "prompt": "When you meet the steps, jump to pass them — only on clear, level, dry ground.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": 6.0,
+        "y": 1.6,
+        "z": -6.0
+      },
+      "activationRadiusMeters": 3.0,
+      "dwellSeconds": 2.0,
+      "trigger": {
+        "type": "jump",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": ""
+      },
+      "audio": {
+        "clipId": "chapter-4-returning-home",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "jump",
+        "url": "",
+        "volume": 0.55,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
+        "license": "",
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
+      }
+    },
+    {
+      "id": "ch4-tunnel",
+      "kind": "encounter",
+      "title": "Ch4 · The Tunnel — Move Quickly (placeholder)",
+      "prompt": "Move quickly through the darkness. (Speed trigger is future work; walk through for now.)",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": 8.0,
+        "y": 1.6,
+        "z": 0.0
+      },
+      "activationRadiusMeters": 3.0,
+      "dwellSeconds": 1,
+      "trigger": {
+        "type": "proximity",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": ""
+      },
+      "audio": {
+        "clipId": "chapter-4-returning-home",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": null,
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
+        "license": "",
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
+      }
+    },
+    {
+      "id": "ch5-rebirth",
+      "kind": "encounter",
+      "title": "Ch5 · The Same Tree — Rebirth",
+      "prompt": "Crouch beside the gravel you began at; ask the tree to care for your children.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": 2.0,
+        "y": 1.8,
+        "z": 1.5
+      },
+      "activationRadiusMeters": 2.5,
+      "dwellSeconds": 2.0,
+      "trigger": {
+        "type": "crouch",
+        "verticalDistanceMeters": 0.3,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": ""
+      },
+      "audio": {
+        "clipId": "chapter-5-rebirth",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "lay-egg",
+        "url": "",
+        "volume": 0.55,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout",
+        "creator": "Plan drafted from the Kinship & Trout FigJam; Vancouver test layout",
+        "capturedAt": "2026-08-10",
+        "license": "",
+        "notes": "Compressed UBC-trees rehearsal layout of the chapter beat; drag onto real features onsite."
       }
     }
   ],
