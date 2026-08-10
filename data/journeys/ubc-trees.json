@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.1",
+  "id": "kinship-trout-downstairs-prototype",
+  "revision": "r000003",
+  "title": "Kinship Trout — UBC Trees Test",
+  "summary": "Tree-music proximity test at the UBC trees site. Waypoints are metres relative to the UBC trees 1 Production anchor; positions are provisional until placed onsite with the web editor.",
+  "site": {
+    "siteId": "ed383e4c-34c7-48cd-b358-3e65377229ba",
+    "coordinateSystem": "local-meters",
+    "originAnchorId": "production-anchor-1022bfda",
+    "vpsMapId": "",
+    "vpsAnchorPayload": "ChUIl+qkh8Hfo6fYARCTvZ7PjpDrsW8YzajWzv4zKicKFQjArNS3j4D7oxgQl8uw0ZDeoerpARIJCgASBSUAAIA/HQAAgD8yEhFxZF8u2aFIQBkcn4H6b9BewA==",
+    "previewAssetUrl": "",
+    "scanProvenance": {
+      "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+      "sourceUrl": "https://scaniverse.nianticspatial.com/orgs/51edd29a-1057-486c-be54-6193b177a79f/sites/ed383e4c-34c7-48cd-b358-3e65377229ba?assetId=1022bfda-55cc-4007-aaad-02f8b8f53288",
+      "creator": "elantao29@gmail.com (Elan's organization), recorded by Botao Hu",
+      "capturedAt": "08/09/2026, 06:35 PM-09:03 PM (Scaniverse portal display)",
+      "license": "",
+      "notes": "Niantic site 'UBC trees' in Elan's organization. Asset 'UBC trees 1' completed 08/09/2026 09:03 PM from one contributing scan covering 570.49 m2; set to Production and its default-anchor payload recorded on 2026-08-09. Waypoint coordinates await onsite placement."
+    }
+  },
+  "safety": {
+    "shortText": "Prototype complete. Remain attentive to the physical site.",
+    "fullText": "Use only in a supervised, dry test area. Place the jump point on level, unobstructed ground. Feed only the virtual animal; never feed wildlife."
+  },
+  "events": [
+    {
+      "id": "branch-main-canopy",
+      "kind": "encounter",
+      "title": "Main Trunk Canopy",
+      "prompt": "Stand beneath the big multi-trunk tree and listen up into the canopy.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": 0.0,
+        "y": 2.4,
+        "z": 0.0
+      },
+      "activationRadiusMeters": 4.0,
+      "dwellSeconds": 1.5,
+      "trigger": {
+        "type": "proximity",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": ""
+      },
+      "audio": {
+        "clipId": "tree-creek-waterplants-1-spatial",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "heron",
+        "url": "",
+        "volume": 0.5,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "",
+        "creator": "placed remotely, adjust onsite",
+        "capturedAt": "2026-08-09",
+        "license": "",
+        "notes": "Provisional branch placement relative to the UBC trees 1 anchor; drag onto the real branch in the online editor onsite."
+      }
+    },
+    {
+      "id": "branch-west",
+      "kind": "encounter",
+      "title": "West Branch",
+      "prompt": "Follow the low branch reaching west and kneel beneath it.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": -4.0,
+        "y": 2.0,
+        "z": 1.5
+      },
+      "activationRadiusMeters": 3.0,
+      "dwellSeconds": 1.5,
+      "trigger": {
+        "type": "crouch",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": ""
+      },
+      "audio": {
+        "clipId": "tree-creek-waterplants-2-spatial",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "lay-egg",
+        "url": "",
+        "volume": 0.5,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "",
+        "creator": "placed remotely, adjust onsite",
+        "capturedAt": "2026-08-09",
+        "license": "",
+        "notes": "Provisional branch placement relative to the UBC trees 1 anchor; drag onto the real branch in the online editor onsite."
+      }
+    },
+    {
+      "id": "branch-east",
+      "kind": "encounter",
+      "title": "East Branch",
+      "prompt": "Jump only on the clear, level, dry ground beneath the east branch.",
+      "anchorId": "production-anchor-1022bfda",
+      "position": {
+        "x": 4.0,
+        "y": 2.2,
+        "z": -1.0
+      },
+      "activationRadiusMeters": 3.0,
+      "dwellSeconds": 1.5,
+      "trigger": {
+        "type": "jump",
+        "verticalDistanceMeters": 0.25,
+        "minimumUpwardSpeedMetersPerSecond": 0.2,
+        "actionTimeoutSeconds": 8,
+        "actionLabel": ""
+      },
+      "audio": {
+        "clipId": "chapter-2-growing",
+        "url": "",
+        "volume": 0.5,
+        "loop": true,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR",
+          "sourceUrl": "https://drive.google.com/file/d/1b_72ZL34MS-kI7rJ1onI5GsnEORUkYdR/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Heron.wav, supplied by the research team. Packaged as a 48 kHz mono MP3 for point-source spatialization. Authorship and license are not verified."
+        }
+      },
+      "completionAudio": {
+        "clipId": "jump",
+        "url": "",
+        "volume": 0.5,
+        "loop": false,
+        "minDistanceMeters": 0.75,
+        "maxDistanceMeters": 18,
+        "provenance": {
+          "assetId": "1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z",
+          "sourceUrl": "https://drive.google.com/file/d/1cHBJvTanHWQXud5O-4TBGjz1a7hDPw3Z/view",
+          "creator": "",
+          "capturedAt": "",
+          "license": "",
+          "notes": "Drive file Eat strider.wav, supplied by the research team. Packaged as a 48 kHz mono MP3. Authorship and license are not verified; the reciprocal-care meaning is an artistic interpretation."
+        }
+      },
+      "provenance": {
+        "assetId": "1022bfda-55cc-4007-aaad-02f8b8f53288",
+        "sourceUrl": "",
+        "creator": "placed remotely, adjust onsite",
+        "capturedAt": "2026-08-09",
+        "license": "",
+        "notes": "Provisional branch placement relative to the UBC trees 1 anchor; drag onto the real branch in the online editor onsite."
+      }
+    }
+  ],
+  "provenance": {
+    "assetId": "kinship-trout-strawberry-creek-south-prototype-008",
+    "sourceUrl": "https://www.figma.com/board/7tta0TkhrNULStI8OCMaFX/Kinship---Trout?node-id=0-1",
+    "creator": "Shoaling Upstream team",
+    "capturedAt": "",
+    "license": "",
+    "notes": "Bundled development fallback based on the supplied interaction descriptions. On 2026-08-03 the project was moved to Niantic Site Strawberry Creek South (187bbd62-4d21-480e-8f8d-e484754aa22b) and selected asset aa815b01-bed7-416c-9d52-b5aef03892f4. The portal showed that asset as not yet Production, so the old Tong anchor and payload were removed. Unity waypoint coordinates are authoring/simulation values until the new Production payload and onsite calibration are recorded. Audio was downloaded from the supplied Drive folder on 2026-07-30 and mapped as an MVP interpretation; authorship and license remain unverified."
+  }
+}

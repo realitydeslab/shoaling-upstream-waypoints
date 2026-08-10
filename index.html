@@ -13,6 +13,11 @@
         <h1>Shoaling Upstream</h1>
         <p class="sub">Online waypoint editor · top-down metres around the VPS2 origin</p>
       </div>
+      <div class="site-switch">
+        <select id="site-select" title="Choose the site to edit"></select>
+        <button id="make-active" title="The iPhone app downloads the active site">Make active on iPhone</button>
+        <button id="new-site" title="Register a new Niantic site with its anchor payload">+ New site</button>
+      </div>
       <span id="status" role="status">Loading…</span>
     </header>
 
@@ -58,6 +63,9 @@
         </section>
 
         <footer class="actions">
+          <button id="preview-toggle"
+                  title="Web Audio HRTF approximation of Apple PHASE; drag the gold dot to walk">
+            Spatial preview (walk the map)</button>
           <button id="publish" class="primary">Publish to iPhone</button>
           <p id="unity-url" class="unity-url"></p>
           <details>
@@ -73,7 +81,8 @@
       <section class="map-wrap" aria-label="Top-down waypoint map">
         <svg id="map" role="application" aria-label="Waypoint map"></svg>
         <p class="map-hint">1 square = 1 m · bold cross = VPS2 anchor origin ·
-          scroll to zoom · drag background to pan</p>
+          scroll to zoom · drag background to pan · spatial preview is a
+          browser HRTF approximation, not Apple PHASE</p>
       </section>
     </main>
 

@@ -109,3 +109,10 @@ details input { width: 100%; margin-top: 0.4rem; }
   pointer-events: none;
   user-select: none;
 }
+
+.site-switch { display: flex; align-items: center; gap: 0.5rem; }
+.site-switch select { max-width: 16rem; }
+.site-switch button { font-size: 0.78rem; white-space: nowrap; }
+
+.listener-dot { fill: #ffd76b; cursor: grab; }
+.listener-halo { fill: rgba(255, 215, 107, 0.15); stroke: #ffd76b; stroke-width: 0.04; cursor: grab; }

@@ -1,0 +1,7 @@
+{
+  "activeSiteId": "ubc-trees",
+  "sites": [
+    { "id": "ubc-trees", "name": "UBC Trees", "journeyPath": "journeys/ubc-trees.json" },
+    { "id": "strawberry-creek-south", "name": "Strawberry Creek South", "journeyPath": "journeys/strawberry-creek-south.json" }
+  ]
+}
