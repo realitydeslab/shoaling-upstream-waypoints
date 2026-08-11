@@ -135,3 +135,4 @@ details input { width: 100%; margin-top: 0.4rem; }
   position: absolute; top: 0.7rem; left: 50%; transform: translateX(-50%);
   display: flex; gap: 0.4rem; z-index: 3;
 }
+.view3d-modes[hidden] { display: none; }
